@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style/style.css">
+    <script defer src="script.js"></script>
+
+    <title>Music Player</title>
+</head>
+<body>
+    <div class="player">
+        <div class="dashboard toggle-passive">
+            <input type="range" class="volume-progress" min='0' max='100'>
+
+            <div class="header">
+                <div class="btn-volume">
+                    <i class="fas fa-minus"></i>
+                </div>
+                <div class="playing">
+                    <h4>Now Playing</h4>
+                    <h2>Sting 57th & 9th</h2>
+                </div>
+                <div class="btn-volume">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+
+            <div class="cd">
+                <img src="" alt="">
+            </div>
+
+            <div class="controller">
+                <div class="btn btn-repeat">
+                    <i class="fas fa-redo-alt"></i>
+                </div>
+                <div class="btn btn-prev">
+                    <i class="fas fa-step-backward"></i>
+                </div>
+                <div class="btn btn-toggle">
+                    <i class="fas fa-pause-circle btn-pause"></i>
+                    <i class="fas fa-play-circle btn-play"></i>
+                </div>
+                <div class="btn btn-next">
+                    <i class="fas fa-step-forward"></i>
+                </div>
+                <div class="btn btn-random">
+                    <i class="fas fa-random"></i>
+                </div>
+            </div>
+
+            <input class="progress" type="range" min="0" max="100" step="0.01">
+
+            <audio autoplay src="audio/y2meta.com - Pharrell Williams - Happy (Video) (64 kbps).mp3"></audio>
+        </div>
+
+        <div class="playlist">
+            <!-- <div class="song">
+                <div class="song-thumb">
+                    <img src="image\countingstar.jfif" alt="thum">
+                </div>
+
+                <div class="info">
+                    <h2 class="title">Music name</h2>
+                    <h5 class="singer">Singer</h5>
+                </div>
+
+                <div class="option">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>

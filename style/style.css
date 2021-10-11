@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiko:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Amiko', sans-serif;
+  font-size: 16px;
+  color: white;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #aeb1d3;
+}
+
+.player {
+  width: 350px;
+  height: 600px;
+  margin: auto;
+  margin-top: 75px;
+  background-color: black;
+  -webkit-box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  scrollbar-width: 0;
+  scroll-behavior: smooth;
+}
+
+.player .player::-webkit-scrollbar {
+  display: none;
+}
+
+.player .dashboard {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: inherit;
+  background-color: #020000;
+  z-index: 1;
+}
+
+.player .dashboard .volume-progress {
+  position: absolute;
+  display: none;
+  margin: 3px 25% 0 25%;
+  width: 50%;
+  height: 3px;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #777777;
+  -webkit-appearance: none;
+}
+
+.player .dashboard .volume-progress::-webkit-slider-thumb {
+  width: 5px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #bbbbbb;
+  -webkit-box-shadow: -100px 0 0 100px #bbbbbb;
+          box-shadow: -100px 0 0 100px #bbbbbb;
+}
+
+.player .dashboard .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.player .dashboard .header .btn-volume {
+  font-size: 1.5rem;
+  margin: 0.8rem 1.5rem;
+}
+
+.player .dashboard .header .btn-volume i {
+  opacity: 0.5;
+}
+
+.player .dashboard .header .playing {
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.player .dashboard .header .playing h4 {
+  margin-top: 1rem;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #ff2600;
+}
+
+.player .dashboard .header .playing h2 {
+  font-size: 1.3rem;
+  padding: 0.2rem;
+}
+
+.player .dashboard .cd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player .dashboard .cd img {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.player .dashboard .controller {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 1rem 0 1rem;
+}
+
+.player .dashboard .controller .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 1.2rem;
+}
+
+.player .dashboard .controller .btn i {
+  opacity: 0.5;
+}
+
+.player .dashboard .controller .btn-toggle {
+  font-size: 3rem;
+  color: #ff2600;
+}
+
+.player .dashboard .controller .btn-toggle i {
+  opacity: 1;
+}
+
+.player .dashboard .controller .btn-toggle .btn-pause {
+  display: none;
+}
+
+.player .dashboard .progress {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 1rem auto;
+  width: 90%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 6px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.player .dashboard .progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: #ff2600;
+  cursor: pointer;
+  -webkit-box-shadow: -300px 0px 0px 300px #ff2600;
+          box-shadow: -300px 0px 0px 300px #ff2600;
+}
+
+.player .playlist {
+  padding: 360px 0.5rem 0 0.5rem;
+}
+
+.player .playlist .song {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  border-radius: 0.2rem;
+  border-top: 1px solid #686868;
+  border-bottom: 1px solid #686868;
+  padding: 0.7rem 0.5rem;
+  margin: 0 0.2rem;
+}
+
+.player .playlist .song .song-thumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player .playlist .song .song-thumb img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.player .playlist .song .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0.5rem;
+  line-height: 0;
+}
+
+.player .playlist .song .info h2 {
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+.player .playlist .song .info h5 {
+  font-weight: 400;
+  font-size: 0.7rem;
+  margin: 0.5rem;
+  opacity: 0.6;
+}
+
+.player .playlist .song .option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  opacity: 0.4;
+}
+
+.toggle-active .btn-play {
+  display: none !important;
+}
+
+.toggle-active .btn-pause {
+  display: inline-block !important;
+}
+
+.random-active, .repeat-active {
+  color: #ff2600;
+  opacity: 0.7;
+}
+
+.song-active {
+  border-top: 1px solid #ff2600 !important;
+  border-bottom: 1px solid #ff2600 !important;
+}
+
+.song-active h2 {
+  opacity: 1;
+  color: #ff2600;
+  color: #fc9278;
+}
+
+.song-active h5 {
+  color: #ffcdc1;
+}
+
+.player::-webkit-scrollbar {
+  display: none;
+}
+
+.volume-active {
+  display: inline-block !important;
+}
+/*# sourceMappingURL=style.css.map */
